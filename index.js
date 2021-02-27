@@ -112,6 +112,7 @@ async function starts() {
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
+                        const auto = budy.toLowerCase()
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
 
@@ -158,7 +159,56 @@ async function starts() {
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
-
+                        if (auto.match('ojan')){
+                        client.sendMessage(from, 'Maaf fauzan sedang off Sistem akan mengirim notif kepadanya secepatnya..',MessageType.text, {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					conversation: '*_Autoresponder Official_*'
+					}
+					}
+					})		
+		                        }
+                        if (auto.match('zann')){
+                        client.sendMessage(from, 'Maaf fauzan sedang off Sistem akan mengirim notif kepadanya secepatnya..',MessageType.text, {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					conversation: '*_Autoresponder Official_*'
+					}
+					}
+					})		
+		                        }
+                        if (auto.match('zan')){
+                        client.sendMessage(from, 'Maaf fauzan sedang off Sistem akan mengirim notif kepadanya secepatnya..',MessageType.text, {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					conversation: '*_Autoresponder Official_*'
+					}
+					}
+					})		
+		                        }
+                        if (auto.match('fauzan')){
+                        client.sendMessage(from, 'Maaf fauzan sedang off Sistem akan mengirim notif kepadanya secepatnya..',MessageType.text, {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					conversation: '*_Autoresponder Official_*'
+					}
+					}
+					})		
+		                        }
+                        if (auto.match('jan')){
+                        client.sendMessage(from, 'Maaf fauzan sedang off Sistem akan mengirim notif kepadanya secepatnya..',MessageType.text, {
+					contextInfo: {
+					participant: '0@s.whatsapp.net',
+					quotedMessage: {
+					conversation: '*_Autoresponder Official_*'
+					}
+					}
+					})		
+		                        }
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
